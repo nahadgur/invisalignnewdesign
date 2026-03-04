@@ -16,6 +16,7 @@ import { FAQ } from '@/components/FAQ';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { HeroLeadForm } from '@/components/HeroLeadForm';
+import { PricingSection } from '@/components/PricingSection';
 
 export default function ServicePage({ params }: { params: { serviceSlug: string } }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -88,6 +89,9 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                   </div>
                 ))}
               </div>
+
+              {/* Pricing for this service */}
+              <PricingSection serviceId={service.id} serviceName={service.title} />
 
               {service.faqs.length > 0 && (
                 <div className="mb-12">
